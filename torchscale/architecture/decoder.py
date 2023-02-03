@@ -282,9 +282,9 @@ class Decoder(nn.Module):
 
         if args.deepnorm:
             if is_encoder_decoder:
-                init_scale = math.pow(12.0 * args.decoder_layers, 0.25)
+                init_scale = math.pow(12.0 * args.decoder_layers, -0.25)
             else:
-                init_scale = math.pow(8.0 * args.decoder_layers, 0.25)
+                init_scale = math.pow(8.0 * args.decoder_layers, -0.25)
             for name, p in self.named_parameters():
                 if (
                     "fc1" in name
