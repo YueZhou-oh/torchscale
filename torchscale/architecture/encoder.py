@@ -240,7 +240,7 @@ class Encoder(nn.Module):
                     / 1.15
                 )
             else:
-                init_scale = math.pow(8.0 * args.encoder_layers, 0.25)
+                init_scale = math.pow(8.0 * args.encoder_layers, -0.25)
             for name, p in self.named_parameters():
                 if (
                     "fc1" in name
